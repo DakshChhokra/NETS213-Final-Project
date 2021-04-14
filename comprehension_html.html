@@ -1,0 +1,121 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <crowd-instructions link-text="View instructions" link-type="button">
+        <short-summary>
+            <p>Given the passage below, create a comprehension question to check if a person read through the passage</p>
+        </short-summary>
+
+        <detailed-instructions>
+            <h3>Collect comprehensions questions for verifying read through</h3>
+            <p>
+              Given a context and an intent, write how you would express the intent using natural language. 
+              
+              Read the given passage, and write 3 comprehension questions about the passage.
+              Don't try to be overly formal, simply write what you would ask to make sure that a friend understood the details in the story.
+              
+        </p>
+        </detailed-instructions>
+
+        <positive-example>
+            <h3>Given Passage</h3>
+            <p>So my (33F) daughter is 16 and my sister is 23.
+
+My sister is obsessed with her instagram, like she posts 3-4 times a day, she's got an appearance‚ and standards. 
+
+My daughter has struggled with her weight for a while, she's 1.8metres tall (?) And 13stone, our goal is to get her down to 11stone.
+
+My sister took a picture of her and my daughter and posted it on Instagram, my daughter was really excited but when she checked it she got really upset - she hasn't left her room yet.
+
+My sister had heavily edited the picture so my daughter looked skinny.
+
+I was extremely angry and phoned my sister to tell her to take it down/ post the unedited photo, she refused telling me that she just wanted to show the world what a beautiful girl my daughter was and that she promotes health.
+
+My daughter is trying to lose weight, it isn't her fault *and* she's a beautiful, growing girl! My sister has crushed her.
+
+So I commented ‚I'm ashamed, my daughter is beautiful without the heavy editing going on in this photo, be ashamed *sister* for body shaming a teenager, take this down immediately and apologise.
+
+My sister didn't see it in time and got a bunch of negative comments, she took it down but phoned me in tears saying I hurt her and that she's sorry but she didn't mean it etc.
+
+My husband thinks that I went overkill.
+
+AITA?</p>
+
+            <h3>Comprehension Questions w/ Answers</h3>
+            <p><b>Question:</b> Who posted the heavily edited picture of the daughter?</p>
+            <p><b>Answer:</b> The Sister</p>
+            <p><b>Question:</b> Who thinks the author went overkill?</p>
+            <p><b>Answer:</b> The husband</p>
+            <p><b>Question:</b> What social media is referenced in the passage?</p>
+            <p><b>Answer:</b> Instagram</p>
+        </positive-example>
+
+
+
+        <negative-example>
+            <h3>Given Passage</h3>
+            <p>So my girlfriend (her 27 me 28) wants to go to this fancy new restaurant in the city that she's heard good things about. 
+            We get there and it seems like one of those hipster places but whatever, I'm hungry. 
+
+I look at the menu and this place is crazy expensive - like every dish is more than $15-$20 and half the ingredients I've never heard of. 
+I order the bison steak ($26) and my girlfriend orders some weird pasta, noki I think ($18). 
+Very important, these were listed as ENTREES on the menu. 
+Mind you with drinks plus tip this is going to come out to over $60 which is already ridiculous for dinner for two people.
+
+So anyway we order as we are starving. My steak arrives and I am shocked, it's like 6 small pieces of sliced steak with some weird sauce on the side and a small handful of salad. 
+I joke to the waiter "where's the rest of my steak?"and he explains they serve smaller portions at this restaurant because they focus on getting the highest quality ingredients. 
+I don't care if this bison was blessed by the pope himself it's absurd to charge that much for such a small bit of steak, it's highway robbery. 
+When I go to restaurants I expect an entree to fill me up and be enough for leftovers.
+
+When the waiter comes back I inform him we will not be paying for our meal, and that they are falsely advertising entrees that barely qualify as a light snack. 
+My girlfriend is begging me to stop but that's where we're different, I don't let businesses push me around and rip me off. 
+
+A manager comes and apologizes but asks us to leave. I don't end up paying as they realized I called them out on their bullshit. 
+My girlfriend is silent the entire time on the way back. 
+Im still hungry so I drive through McDonald's and get a burger, and when I did that she asked to be dropped off at her place. 
+It's now the next day and I'm starting to think I didn't handle the situation as well as I could have (I could have probably just asked for a discount). 
+My girlfriend hasn't responded to my texts so now I'm starting to think I'm an asshole.
+
+Am I the asshole?</p>
+
+            <h3>Comprehension Questions w/ Answers</h3>
+            <p><b>Question:</b> Is the author an asshole?</p>
+            <p><b>Answer:</b> Yes, because he refuses to pay for the meal</p>
+            <p><b>Reason:</b> This is a bad question because it's opinion based and not off the facts in the passage </p>
+            
+            <p><b>Question:</b> What is the girlfriend's profession?</p>
+            <p><b>Answer:</b> Sales Representative</p>
+            <p><b>Reason:</b> This is a bad question because we have no information about the girlfriend's profession </p>
+            
+            <p><b>Question:</b> What does the manager do?</p>
+            <p><b>Answer:</b> Yells at the author</p>
+            <p><b>Reason:</b> This is a bad because the answer is incorrect </p>
+         </negative-example>
+    </crowd-instructions>
+
+    <p>Read the passage below, and create 3 comprehension question to check if a person read through the passage</p>
+
+    <!-- Your contexts and intents will be substituted for the "context" and "intent" variables when you 
+           publish a batch with an input file containing multiple contexts and intents -->
+    <p><strong>Title: </strong>${title}</p>
+    <p><strong>Body: </strong>${body}</p>
+    
+    <p><strong>Question 1</strong></p>
+    <crowd-input name="question_1" placeholder="Type a comprehension question here..." required></crowd-input>
+    <crowd-input name="answer_1" placeholder="Type in the answer to the above comprehension question..." required></crowd-input>
+    
+    <p><strong>Question 2</strong></p>
+    <crowd-input name="question_2" placeholder="Type a comprehension question here..." required></crowd-input>
+    <crowd-input name="answer_2" placeholder="Type in the answer to the above comprehension question..." required></crowd-input>
+    
+    <p><strong>Question 3</strong></p>
+    <crowd-input name="question_3" placeholder="Type a comprehension question here..." required></crowd-input>
+    <crowd-input name="answer_3" placeholder="Type in the answer to the above comprehension question..." required></crowd-input>
+    
+</crowd-form>
