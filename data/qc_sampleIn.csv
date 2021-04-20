@@ -1,0 +1,9 @@
+postID,iata,a1,a2,a3
+1,yes,a,b,d
+1,yes,b,a,a
+1,no,a,b,c
+2,nah,a,b,b
+2,no,a,b,c
+2,no,b,b,a
+3,esh,c,c,c
+3,yes,a,b,c

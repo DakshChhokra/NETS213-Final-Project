@@ -1,0 +1,4 @@
+postID,weight_yes,weight_no,weight_nah,weight_esh,vote
+1,1.25,1.0,0.0,0.0,yes
+2,0.0,1.25,0.25,0.0,no
+3,1.0,0.0,0.0,0.25,yes
