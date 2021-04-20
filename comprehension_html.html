@@ -19,6 +19,7 @@
               
               Read the given passage, and write 3 comprehension questions about the passage.
               Don't try to be overly formal, simply write what you would ask to make sure that a friend understood the details in the story.
+              For each comprehension question make sure to include the correct answers, and 2 possible wrong answers as if you were creating option for a multiple choice question
               
         </p>
         </detailed-instructions>
@@ -50,10 +51,16 @@ AITA?</p>
             <h3>Comprehension Questions w/ Answers</h3>
             <p><b>Question:</b> Who posted the heavily edited picture of the daughter?</p>
             <p><b>Answer:</b> The Sister</p>
+            <p><b>Possible wrong Answer 1:</b>The Brother</p>
+            <p><b>Possible wrong Answer 2:</b>A Neighbour</p>
             <p><b>Question:</b> Who thinks the author went overkill?</p>
             <p><b>Answer:</b> The husband</p>
+            <p><b>Possible wrong Answer 1:</b>The sister</p>
+            <p><b>Possible wrong Answer 2:</b> The daughter</p>
             <p><b>Question:</b> What social media is referenced in the passage?</p>
             <p><b>Answer:</b> Instagram</p>
+            <p><b>Possible wrong Answer 1:</b>Facebook</p>
+            <p><b>Possible wrong Answer 2:</b>Snapchat</p>
         </positive-example>
 
 
@@ -87,14 +94,20 @@ Am I the asshole?</p>
             <h3>Comprehension Questions w/ Answers</h3>
             <p><b>Question:</b> Is the author an asshole?</p>
             <p><b>Answer:</b> Yes, because he refuses to pay for the meal</p>
+            <p><b>Possible wrong Answer 1:</b> Yes, because he smells</p>
+            <p><b>Possible wrong Answer 2:</b> Yes, because he is sexist</p>
             <p><b>Reason:</b> This is a bad question because it's opinion based and not off the facts in the passage </p>
             
             <p><b>Question:</b> What is the girlfriend's profession?</p>
             <p><b>Answer:</b> Sales Representative</p>
+            <p><b>Possible wrong Answer 1:</b>Programmer</p>
+            <p><b>Possible wrong Answer 2:</b> Uber Driver</p>
             <p><b>Reason:</b> This is a bad question because we have no information about the girlfriend's profession </p>
             
             <p><b>Question:</b> What does the manager do?</p>
             <p><b>Answer:</b> Yells at the author</p>
+            <p><b>Possible wrong Answer 1:</b>Gives the author a bird</p>
+            <p><b>Possible wrong Answer 2:</b>Hates himeself</p>
             <p><b>Reason:</b> This is a bad because the answer is incorrect </p>
          </negative-example>
     </crowd-instructions>
@@ -108,14 +121,20 @@ Am I the asshole?</p>
     
     <p><strong>Question 1</strong></p>
     <crowd-input name="question_1" placeholder="Type a comprehension question here..." required></crowd-input>
-    <crowd-input name="answer_1" placeholder="Type in the answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="answer_1" placeholder="Type in the CORRECT answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="wrong_answer_1_1" placeholder="Type in a possible WRONG answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="wrong_answer_1_2" placeholder="Type in a possible WRONG answer to the above comprehension question..." required></crowd-input>
     
     <p><strong>Question 2</strong></p>
     <crowd-input name="question_2" placeholder="Type a comprehension question here..." required></crowd-input>
-    <crowd-input name="answer_2" placeholder="Type in the answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="answer_2" placeholder="Type in the CORRECT answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="wrong_answer_2_1" placeholder="Type in a possible WRONG answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="wrong_answer_2_2" placeholder="Type in a possible WRONG answer to the above comprehension question..." required></crowd-input>
     
     <p><strong>Question 3</strong></p>
     <crowd-input name="question_3" placeholder="Type a comprehension question here..." required></crowd-input>
     <crowd-input name="answer_3" placeholder="Type in the answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="wrong_answer_3_1" placeholder="Type in a possible WRONG answer to the above comprehension question..." required></crowd-input>
+    <crowd-input name="wrong_answer_3_2" placeholder="Type in a possible WRONG answer to the above comprehension question..." required></crowd-input>
     
 </crowd-form>
