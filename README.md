@@ -11,13 +11,14 @@ The aggregation module is comprised of HIT 1's questions which is the result fro
 
 HIT 1 to HIT2 Aggregation
 
-Big Idea: At a high level, this component takes id, AITA title, AITA body, three questions, one correct answer choice for each question, and two incorrect answer choices for each question. Then grouping each answer set (the three answer choices associated with each question), it stores them in a list. Then, the choices are randomly sorted through a randomizer. From here it displays the output. 
+Big Idea: At a high level, this component takes id, AITA title, AITA body, three questions, one correct answer choice for each question, and two incorrect answer choices for each question. Then grouping each answer set (the three answer choices associated with each question), it stores them in a list. Then, the choices are randomly sorted through a randomizer. This is done so that the correct answer choice is not always in the same position everytime. This would defeat the putpose of the quality control. After randomization, it displays the output. 
 
-_Sample Input:_ `/src/` [EXPLANATION]
+_Sample Input:_ `/data/agg_hit1_input.csv` [Provides raw input from HIT1]
 
-_Sample Output:_ `/src/` [EXPLANATION]
+_Sample Output:_ `/data/agg_hit1_output.csv`[Aggregate the HIT1 to create the input for HIT2]
+                `/data/agg_key.csv`[Aggregate the key to the comprehension questions]
 
-_Code:_ `/src/`
+_Code:_ `/src/aggregation_validator.py`
 
 [EXPLAIN MORE HERE]
 
