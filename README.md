@@ -27,7 +27,7 @@ In HIT 2 or what we are calling the validation HIT, we get user answers on the 3
 
 Once we have cleaned and wrangled the kaggle dataset we will expand the functionality of this file by getting the labels the reddit audience also used, and then we will use the two different sets of labels for more analysis.
 
-_Sample Input:_ `data/agg_hit_2_input.csv` [Has raw user answers for comprehension and validator]
+_Sample Input:_ `data/agg_hit_2_input.csv` [Has raw user answers for comprehension and validator after HIT2]
 
 _Sample Output:_ `data/agg_hit_2_output.csv` [Final labels after aggregating data w/ confidence levels]
 
