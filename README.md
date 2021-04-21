@@ -9,13 +9,15 @@ Example Raw Data is found at: `/data/raw0207.csv`
 ### Aggregation Module
 The aggregation module is comprised of HIT 1's questions which is the result from HIT 1. Once HIT 1 is complete, the questions must be aggregated together to develop the batch CSV for HIT 2. 
 
-HIT 1 to HIT2 Aggregation @Anish @Vaibhaw
+HIT 1 to HIT2 Aggregation
 
-_Sample Input:_ `[PATH]` [EXPLANATION]
+Big Idea: At a high level, this component takes id, AITA title, AITA body, three questions, one correct answer choice for each question, and two incorrect answer choices for each question. Then grouping each answer set (the three answer choices associated with each question), it stores them in a list. Then, the choices are randomly sorted through a randomizer. From here it displays the output. 
 
-_Sample Output:_ `[PATH]` [EXPLANATION]
+_Sample Input:_ `/src/` [EXPLANATION]
 
-_Code:_ `[PATH]`
+_Sample Output:_ `/src/` [EXPLANATION]
+
+_Code:_ `/src/`
 
 [EXPLAIN MORE HERE]
 
