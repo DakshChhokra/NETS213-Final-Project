@@ -32,6 +32,7 @@ _Sample Input:_ `data/agg_hit_2_input.csv` [Has raw user answers for comprehensi
 _Sample Output:_ `data/agg_hit_2_output.csv` [Final labels after aggregating data w/ confidence levels]
 
 _Code:_ `src/aggregation_validator.py`
+
 ### Quality Control Module
 This project employs a novel approach to Quality Control by using workers as the proxy for quality control. HIT 2 provides the actual information - HIT 1 in fact allows us to create targeted quality control (in essence, the crowd is checking the crowd). 
 
