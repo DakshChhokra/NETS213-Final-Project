@@ -11,8 +11,8 @@ import pandas as pd
 
 def main():
   #Step 0: Merge Answer File with Original Questions
-  df_ans = pd.read_csv('/data/qc_answersIn.csv')
-  df_response = pd.read_csv('/data/qc_sampleIn.csv')
+  df_ans = pd.read_csv('../data/qc_answersIn.csv')
+  df_response = pd.read_csv('../data/qc_sampleIn.csv')
   df = mergeAnsWithResponse(df_response, df_ans)
   #Step 1: Add weights to each row
 

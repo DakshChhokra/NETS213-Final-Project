@@ -9,9 +9,19 @@ Example Raw Data is found at: `/data/raw0207.csv`
 ### Aggregation Module
 The aggregation module is comprised of HIT 1's questions which is the result from HIT 1. Once HIT 1 is complete, the questions must be aggregated together to develop the batch CSV for HIT 2. 
 
+HIT 1 to HIT2 Aggregation @Anish @Vaibhaw
+
+_Sample Input:_ `[PATH]` [EXPLANATION]
+
+_Sample Output:_ `[PATH]` [EXPLANATION]
+
+_Code:_ `[PATH]`
+
 [EXPLAIN MORE HERE]
 
-@DakshChhokra
+Post HIT 2 Aggregation
+
+Big Idea: 
 
 _Sample Input:_ `[PATH]` [EXPLANATION]
 
