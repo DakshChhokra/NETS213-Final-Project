@@ -9,7 +9,7 @@ Example Raw Data is found at: `/data/raw0207.csv`
 ### Aggregation Module
 The aggregation module is comprised of HIT 1's questions which is the result from HIT 1. Once HIT 1 is complete, the questions must be aggregated together to develop the batch CSV for HIT 2. 
 
-HIT 1 to HIT2 Aggregation
+#HIT 1 to HIT2 Aggregation
 
 Big Idea: At a high level, this component takes id, AITA title, AITA body, three questions, one correct answer choice for each question, and two incorrect answer choices for each question. Then grouping each answer set (the three answer choices associated with each question), it stores them in a list. Then, the choices are randomly sorted through a randomizer. This is done so that the correct answer choice is not always in the same position everytime. This would defeat the putpose of the quality control. After randomization, it displays the output. 
 
@@ -20,9 +20,8 @@ _Sample Output:_ `/data/agg_hit1_output.csv`[Aggregate the HIT1 to create the in
 
 _Code:_ `/src/aggregation_validator.py`
 
-[EXPLAIN MORE HERE]
 
-Post HIT 2 Aggregation
+#Post HIT 2 Aggregation
 
 Big Idea: In HIT 2 or what we are calling the validation HIT, we get user answers on the 3 comprehension questions, and thier opinion on whether the author behaved in an insensitive way or not. We first use the answers on the comprehension questions as gold standard questions to verify whether the user has actually read through the body of the text. We then weight the label of the user by their accuracy on the three questions. Then we aggregate all the answers for a particular prompt into one label by choosing the label with the highest weighted score, and get the confidence of that label by dividing the weighted score of that label by the sum of the weighted scores of all the labels.
 
