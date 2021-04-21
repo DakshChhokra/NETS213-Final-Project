@@ -110,11 +110,6 @@ final_df
 final_df.to_csv("output.csv")
 
 
-
-
-
-
-
 i = 2
 some_counter = 0
 while some_counter < i:

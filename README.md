@@ -21,13 +21,15 @@ _Code:_ `[PATH]`
 
 Post HIT 2 Aggregation
 
-Big Idea: 
+Big Idea: In HIT 2 or what we are calling the validation HIT, we get user answers on the 3 comprehension questions, and thier opinion on whether the author behaved in an insensitive way or not. We first use the answers on the comprehension questions as gold standard questions to verify whether the user has actually read through the body of the text. We then weight the label of the user by their accuracy on the three questions. Then we aggregate all the answers for a particular prompt into one label by choosing the label with the highest weighted score, and get the confidence of that label by dividing the weighted score of that label by the sum of the weighted scores of all the labels.
 
-_Sample Input:_ `[PATH]` [EXPLANATION]
+Once we have cleaned and wrangled the kaggle dataset we will expand the functionality of this file by getting the labels the reddit audience also used, and then we will use the two different sets of labels for more analysis.
 
-_Sample Output:_ `[PATH]` [EXPLANATION]
+_Sample Input:_ `data/agg_hit_2_input.csv` [Has raw user answers for comprehension and validator]
 
-_Code:_ `[PATH]`
+_Sample Output:_ `data/agg_hit_2_output.csv` [Final labels after aggregating data w/ confidence levels]
+
+_Code:_ `src/aggregation_validator.py`
 ### Quality Control Module
 This project employs a novel approach to Quality Control by using workers as the proxy for quality control. HIT 2 provides the actual information - HIT 1 in fact allows us to create targeted quality control (in essence, the crowd is checking the crowd). 
 
