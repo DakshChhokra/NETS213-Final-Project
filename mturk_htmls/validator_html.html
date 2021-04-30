@@ -19,11 +19,14 @@
 
     <p>Read the passage below, and answer 3 comprehension questions and one character judgement question</p>
 
+    <h2>The Passage</h2>
     <!-- Your contexts and intents will be substituted for the "context" and "intent" variables when you 
            publish a batch with an input file containing multiple contexts and intents -->
     <p><strong>Title: </strong>${title}</p>
     <p><strong>Body: </strong>${body}</p>
     
+    <h2>Definition of an Asshole</h2>
+
     <p><strong>Now let us define the word asshole</strong></p>
     <p>According to urban dictionary an asshole is <strong>"A person who is intentionally cruel, obnoxious and heartless."</strong> </p>
     <br/>Though the appearance of assholes does not follow a stereotype, behavior does. Assholes tend to:
@@ -39,37 +42,67 @@
 <br/>-Ambiguously answer your questions.
 <br/>-Deny that they are assholes out loud.
 
+<h2>Answer some Questions: </h2>
 <p>Given the above description and the contents of the passage please answer the questions below</p>
-    
+
+<h3>Question 1: ${comprehension_question_1}</h3>
+<ol>
+  <li>(A) ${q1A1}</li>
+    <li>(B) ${q1A2}</li>
+    <li>(C) ${Q1A3}</li>
+</ol>
     <p>
-    <label for="comprehension_1">${comprehension_question_1}</label>
+    <label for="comprehension_1">Question 1 Response</label>
         <select name="comprehension_1" id="comprehension_1" required>
-          <option value="1">${comprehension_question_1_answer_1}</option>
-          <option value="2">${comprehension_question_1_answer_2}</option>
-          <option value="3">${comprehension_question_1_answer_3}</option>
+          <option value="1">A</option>
+          <option value="2">B</option>
+          <option value="3">C</option>
+          <option value="4">Invalid Question or No Option Choice Correct</option>
         </select>
     </p>
-    
-    <p>
-    <label for="comprehension_2">${comprehension_question_2}</label>
+    <p><label for="q1_whyWrong">If you selected Invalid Question or No Option Choice Correct, explain why:</label> <input id="q1_whyWrong" name="q1_whyWrong" /></p>
+  <h3>Question 2: ${comprehension_question_2}</h3>
+<ol>
+  <li>(A) ${q2A1}</li>
+    <li>(B) ${q2A2}</li>
+    <li>(C) ${q2A3}</li>
+</ol>
+
+<p>
+    <label for="comprehension_2">Question 2 Response</label>
         <select name="comprehension_2" id="comprehension_2" required>
-          <option value="1">${comprehension_question_2_answer_1}</option>
-          <option value="2">${comprehension_question_2_answer_2}</option>
-          <option value="3">${comprehension_question_2_answer_3}</option>
+          <option value="1">A</option>
+          <option value="2">B</option>
+          <option value="3">C</option>
+          <option value="4">Invalid Question or No Option Choice Correct</option>
+
         </select>
     </p>
+    <p><label for="q2_whyWrong">If you selected Invalid Question or No Option Choice Correct, explain why:</label> <input id="q2_whyWrong" name="q2_whyWrong" /></p>
+
     
-    <p>
-    <label for="comprehension_3">${comprehension_question_3}</label>
+    <h3>Question 3: ${comprehension_question_3}</h3>
+<ol>
+  <li>(A) ${q3A1}</li>
+    <li>(B) ${q3A2}</li>
+    <li>(C) ${q3A3}</li>
+</ol>
+
+<p>
+    <label for="comprehension_3">Question 3 Response</label>
         <select name="comprehension_3" id="comprehension_3" required>
-          <option value="1">${comprehension_question_3_answer_1}</option>
-          <option value="2">${comprehension_question_3_answer_2}</option>
-          <option value="3">${comprehension_question_3_answer_3}</option>
+          <option value="1">A</option>
+          <option value="2">B</option>
+          <option value="3">C</option>
+            <option value="4">Invalid Question or No Option Choice Correct</option>
+
         </select>
     </p>
-    
+    <p><label for="q3_whyWrong">If you selected Invalid Question or No Option Choice Correct, explain why:</label> <input id="q3_whyWrong" name="q3_whyWrong" /></p>
+
+<h2>Now, your judgement!</h2>
     <p>
-    <label for="asshole_validator">Is the author the asshole_validator in the above passage?</label>
+    <label for="asshole_validator">Is the author the asshole in the above passage?</label>
         <select name="asshole_validator" id="comprehension_3" required>
           <option value="YTA">The author is the asshole</option>
           <option value="NTA">The author is not the asshole, somebody else is the asshole</option>
