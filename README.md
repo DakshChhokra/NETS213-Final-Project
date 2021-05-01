@@ -24,9 +24,9 @@ We have incorporated the TA's advice and now include a field for people to input
 #### Discussion on Analysis Planned
 We plan to do 2 analysis, as discussed at the beginning of this project. 
 
-(1) Compare AITA? between Redditers and MTurkers. We want to see if there is a discernible difference in how MTurkers judge people. In particular, one can think of Reddit as a crowdsourcing method, where the best comments are upvoted. However, this is a unique subset. We see if a more geographical (and perhaps more economically distributed) group have a different idea and bias. 
+(1) Compare AITA? between Redditers and MTurkers. We want to see if there is a discernible difference in how MTurkers judge people. In particular, one can think of Reddit as a crowdsourcing method, where the best comments are upvoted. However, Reddit is a social network that is likely to have a certain bias. We thus compare this with mturkers, which seem to have a larger reach. This is fairly simple to implement, as we already have the equivalent of the groundtruth of the redditers in the subset. WE just simply need to compare the posts between the Mturkers and Reddit, since we have restricted the posts that are in the HITs to only be those which we have Reddit results. We will perform standard EDA and generate some insights. 
 
-(2) Create ML models. We will create two seperate models: one using the crowdsourced labels, and then another using the original Reddit labels. We will use this to determine if there is a difference on a brand new post, but more importantly, allow us to attain some judgement a la wisdom of the crowds. 
+(2) Create ML models. We will create two seperate models: one using the crowdsourced labels, and then another using the original Reddit labels. We will use this to determine if there is a difference on a brand new post, but more importantly, allow us to attain some judgement a la wisdom of the crowds. This will be done primarily using NLP models to generate a model that can predict these crowds. Of course, we note that this may be challenging given the wide ranging posts, but we believe that there may be trends that cause judgement, and we want to use these models to determine if we can in fact reasonably estimate. 
 
 ##### Drawbacks of Analysis
 
@@ -48,7 +48,7 @@ This gets us to roughly 900 posts. We note that these posts are actually quite a
 
    We split the dataset as following: The full 900 posts will be used in our ML predictor for Redditers. The curated 300 is then used to feed into the HITs. 
 
-This is found in `src/GeneratePostCorpus.ipnyb`. The Source HIT corpus for crowdsourcing is under `data/HITCorpus.csv`
+This is found in `src/GeneratePostCorpus.ipnyb`. The Source HIT corpus for crowdsourcing is under `data/HITCorpus.csv`. The entire cleaned dataset is called `data/cleanedDataset.csv`
 
 #### Preparation and Output Data Pipeline of HIT 1: (4pts) SETUP DONE
 
