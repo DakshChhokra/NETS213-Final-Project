@@ -1,3 +1,70 @@
+# r/IsSociety Screwed
+
+NETS 213 Final Project, 2021A
+
+Daniel Ng, Anish Bathwal, Daksh Chokra, Vaibhaw Ladha, Gund Jungsanguanpornsuk
+## Part 3: HIT Design and System Integration Checkpoint
+
+We have successfully completed the "bones" of the project. The next steps include actually submitting the HITs into the world, running the necessary code, and generating results. 
+
+### HIT Design
+
+The HIT design used for both HITs are in `/mturk_htmls`. There are two HTMLs. `comprehension_html.html` and `validator_html.html`. 
+
+#### Comprehension HTML
+Comprehension HTML, which is now currently live on MTurk Workshop, has the posts for people to create validation questions. Currently it is populated with actual posts that we will indeed use. 
+
+This HTML uses Amazon's crowd APIs to create the HIT. It has a simple 4 boxes for turkers to enter a question, and correct/incorrect answers. 
+
+#### Validator HTML
+Taking in the questions from the Comprehension HTML (HIT 1), Validation HTML (HIT 2) feeds these questions and answers into a new batch. **Please note that the current HIT uses dummy text from an input dummy CSV** (`/AITA_Validator.csv`). This is because we do not yet have the questions to the posts yet. 
+
+We have incorporated the TA's advice and now include a field for people to input that an answer is incorrect. They can now explain why. 
+
+#### Discussion on Analysis Planned
+We plan to do 2 analysis, as discussed at the beginning of this project. 
+
+(1) Compare AITA? between Redditers and MTurkers. We want to see if there is a discernible difference in how MTurkers judge people. In particular, one can think of Reddit as a crowdsourcing method, where the best comments are upvoted. However, this is a unique subset. We see if a more geographical (and perhaps more economically distributed) group have a different idea and bias. 
+
+(2) Create ML models. We will create two seperate models: one using the crowdsourced labels, and then another using the original Reddit labels. We will use this to determine if there is a difference on a brand new post, but more importantly, allow us to attain some judgement a la wisdom of the crowds. 
+
+##### Drawbacks of Analysis
+
+We know that the analyzing how crowds are making predictions is near impossible - we are doing an experiment on something judgemental. Because of this, we note that the best data we have to groundtruth is Reddit. 
+
+Further, we note that this method is unlikely to scale due to the cost of getting these HITs out. However, we believe that this could be an interesting experiment that could later be replicated in a game setting without funds. 
+### System Flow
+
+#### Data Wrangling: (2 pts) DONE
+We have completed the Data Wrangling phase of the project. In particular, we clean the data based on a few factors: 
+  - We remove non ASCII characters allowed by Reddit but not MTurk. 
+  - We combine all posts in the dataset, and eliminate duplicate submissions. 
+  - We ignore general Moderator posts such as new updates to the forum
+  - We ignore any posts that are updates to prior posts, as they typically do not contain true judgemental discussion. 
+  - We remove abnormal spacing typically found in Reddit to chunk posts, as this causes issues with MTurk and multiline strings. 
+
+This gets us to roughly 900 posts. We note that these posts are actually quite abnormally skewed to NTA. However, to provide a reasonable sample, we collate 300 posts based on a mix of different tags. 
+   - Note: These tags are generated based on a reddit bot that is the only permitted bot on the subreddit. It takes the top comments, identify the rating, and then determine the decision after 48 hours. Note that the subreddit is designed to be in contest mode for the first hour, so this allows for the best comment to truly be the best comment and then traction continues the trend. In essence, Reddit is its own crowdsource. 
+
+   We split the dataset as following: The full 900 posts will be used in our ML predictor for Redditers. The curated 300 is then used to feed into the HITs. 
+
+This is found in `src/GeneratePostCorpus.ipnyb`. The Source HIT corpus for crowdsourcing is under `data/HITCorpus.csv`
+
+#### Preparation and Output Data Pipeline of HIT 1: (4pts) SETUP DONE
+
+The above code has prepared the data for input to HIT1. We just need to wait for the results. 
+
+The HTML page for HIT 1 is discussed above.
+
+An example for HIT 1 is published in the sandbox, and we plan to release it out to the world in the coming days. 
+
+Then the results from HIT 1 will be processed by our aggregation modules discussed below. In further detail, the results that come from HIT 1 are then fed to `aggregation_comprehension.py`. Since each HIT is only one question (this is designed intentionally so that different people create different questions in hopes to reduce bias and confusion), this aggregates the responses from HIT 1 into the single line needed for HIT 2. This thus creates all three questions associated to the same post ID. Then afterwards, it shuffles the answer choices and provides us the correct answer choice in the csv. 
+
+
+
+### Creation and Output Of HIT 2: (4pts) SETUP DONE
+
+
 ## Part 2.2: QC and Aggregation
 
 ### Raw Data Input
