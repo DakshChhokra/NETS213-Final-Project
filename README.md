@@ -64,6 +64,22 @@ Then the results from HIT 1 will be processed by our aggregation modules discuss
 
 ### Creation and Output Of HIT 2: (4pts) SETUP DONE
 
+We take the result from the above file and then feed this into HIT 2. Please see above for discussion on HIT 2. 
+
+After this is processed, this result from HIT 2 is then feeded into our Quality Control module. This is found in `qc.py`. In particular, this takes the results of the HITs and compares them to their answers. We check to see the accuracy of the questions. Please see below in Part 2.2 for this methodology. 
+
+Once this is complete, we will feed this result into `src/aggregation_validator.py`. This provides us the final confidence values necessary to train our models. 
+
+This concludes the completed work. 
+
+### Work Remaining (8 pts)
+
+The following still remains, but is unfortunately contingent upon having the data of the HITs:
+
+- Analytics of MTurk Results (3pts): This is indeed actually somewhat completed above in the aggregation module. We simply need to extend it to analyzing between posts and also ingesting the information from the original corpus to compare with the turkers. 
+- ML Predictor: We plan to use an NLP predictor. However, since ML is often as much as an art as it is science, we have refrained from beginning this phase until we understand our dataset more. Due to the size of the model, we envision the need of multiple techniques for this to work. Further, due to the imbalance of posts found in our dataset, we believe some data manipulation may be needed such as oversampling or imputation. 
+
+
 
 ## Part 2.2: QC and Aggregation
 
